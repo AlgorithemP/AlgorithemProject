@@ -20,6 +20,8 @@ bool place::add_nearLocations (const double X, const double Y, const unsigned in
 
     this->nearLocations.push_back (temp);
 
+    temp.distance = this->calculate_distance (this->location.first, this->location.second, temp.location.first, temp.location.second);
+
     if (this->nearLocations.at (this->nearLocations.size ()).location.first == X)
         if (this->nearLocations.at (this->nearLocations.size ()).location.second == Y)
             if (this->nearLocations.at (this->nearLocations.size ()).weight == weight)
